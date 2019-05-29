@@ -23,6 +23,7 @@ set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/task1.cpp)
 set(CMAKE_CXX_STANDARD 11)
 
 add_library(task1_lib ${SRC_FILES})
+add_executable(task1 ${PROJECT_SOURCE_DIR}/src/Text.cpp)
 add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
 target_link_libraries(task1 task1_lib)
