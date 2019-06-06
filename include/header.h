@@ -10,6 +10,6 @@
 
 using namespace std;
 
-const int NPREF = 2;
-const int MAXGEN = 1000;
-typedef deque<string> prefix;
+const int NPREF = 2;//количество слов в префиксе
+const int MAXGEN = 1000; //объем текста на вызоде
+typedef deque<string> prefix; //очередь префиксов
