@@ -17,7 +17,7 @@ int main() {
     srand(time(0));
     vector<string> suff;
     map <prefix, vector<string> > statetab;
-    ifstream file("/Users/artemaroslankin/Documents/Progacpp/untitled1/13306.txt");
+    ifstream file("/Users/artemaroslankin/Documents/Progacpp/untitled1/input.txt");
     string word;
     prefix source_prefix, pref;
 
@@ -44,13 +44,13 @@ int main() {
     }
     pref = source_prefix;
 
-    ofstream output("/Users/artemaroslankin/Documents/Progacpp/untitled1/output.txt");
+    ofstream output("/Users/artemaroslankin/Documents/Progacpp/untitled1/outputFinal.txt");
     output << source_prefix[0] << ' ' << source_prefix[1] <<' ';
     for(int i = 0; i < MAXGEN; i++){
         if(statetab.find(pref) != statetab.end()){
             int n = rand() % statetab.find(pref)->second.size();
             output << statetab[pref][n] << ' ';
-            if(i % 3 == 0)
+            if(i % 7 == 0)
                 output << endl;
             pref.pb(statetab[pref][n]);
             pref.pop_front();
