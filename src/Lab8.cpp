@@ -17,7 +17,6 @@ typedef deque<string> prefix;	// очередь префиксов
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-
 	string curr_str;						// считываемая строка
 	prefix curr_prefix;						// префикс
 	map<prefix, vector<string> > statetab;	// "таблица" префиксов-суффиксов
