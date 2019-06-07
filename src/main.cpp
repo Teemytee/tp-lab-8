@@ -44,15 +44,12 @@ int main()
     out << initial_pref[0] << ' ' << initial_pref[1] << ' ';
     for (int i(0); i < MAXGEN; i++)
     {
-        if (statetab.find(pref) != statetab.end())
-        {
-            int n = rand() % statetab.find(pref)->second.size();
-            out << statetab[pref][n] << ' ';
-            if (i % 3 == 0)
-                out << endl;
-            pref.push_back(statetab[pref][n]);
-            pref.pop_front();
-        }
+        int n = rand() % statetab[pref].size();
+        out << statetab[pref][n] << ' ';
+        if (i % 3 == 0)
+            out << endl;
+        pref.push_back(statetab[pref][n]);
+        pref.pop_front();
     }
     file.close();
     out.close();
