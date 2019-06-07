@@ -44,9 +44,13 @@ int main()
     out << initial_pref[0] << ' ' << initial_pref[1] << ' ';
     for (int i(0); i < MAXGEN; i++)
     {
-        int n = rand() % statetab[pref].size();
+        int n(-1);
+        if (statetab[pref].size() != 0)
+            int n = rand() % statetab[pref].size();
+        else
+            continue;
         out << statetab[pref][n] << ' ';
-        if (i % 3 == 0)
+        if (i % 6 == 0)
             out << endl;
         pref.push_back(statetab[pref][n]);
         pref.pop_front();
