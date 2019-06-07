@@ -32,16 +32,8 @@ int main()
         initial_pref = pref;
         while (file >> word)
         {
-            if (statetab.find(pref) == statetab.end())
-            {
-                suff.push_back(word);
-                statetab.emplace(pref, suff);
-                suff.clear();
-            }
-            else
-            {
-                statetab[pref].push_back(word);
-            }
+
+            statetab[pref].push_back(word);
             pref.pop_front();
             pref.push_back(word);
         }
